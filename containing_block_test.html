@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+        /* 多背景
+            https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Background_and_Borders/Using_CSS_multiple_backgrounds
+        */
+        .test {
+            position: relative;
+            width: 500px;
+            height: 500px;
+            background: blue;
+            padding: 50px;
+        }
+        /* absolute 相对于的是containing block的padding edge，relative 相对于的是containing block的content edge
+        参考w3标准：https://www.w3.org/TR/CSS21/visudet.html#containing-block-details
+        absolute要比relative大一些。
+        */
+        .relative_inner {
+            width: 80%;
+            height:80%;
+            position: relative;
+            background: red;
+        }
+        .absolute_inner {
+            width: 80%;
+            height:80%;
+            position: absolute;
+            background: yellow;
+        }
+    </style>
+</head>
+<body>
+<div class="test">
+    <div class="absolute_inner"></div>
+    <div class="relative_inner"></div>
+</div>
+</body>
+</html>
